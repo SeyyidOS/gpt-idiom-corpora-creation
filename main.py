@@ -17,7 +17,7 @@ content = "\
           Asagidaki cumleleri ornekteki gibi siniflandir.\
           "
 
-df = pd.read_excel("./dataset_tr.xlsx").iloc[0:10, :]
+df = pd.read_excel("./dataset_tr.xlsx").iloc[50:60, :]
 df['prompt'] = df['idiom'] + ": " + df['submission']
 
 for i, data in enumerate(df['prompt'].values):
