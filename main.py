@@ -9,20 +9,21 @@ openai.api_key = config['OPENAI']['SECRET']
 
 content = "\
           Merhaba senden simdi bir dilbilmci gibi davranmani istiyorum.\
-          Ben Turkceyi yeni ogreniyorum ve deyimleri ogrenirken oldukca zorlaniyorum.\
-          Bu konuda ben sana bazi cumleler verecegim sen de bana bunlarin deyim olup olmadigini soyleyeceksin.\
+          Ben Turkceyi yeni ogreniyorum ve bazı kelimelerin birden fazla anlamda olması benim öğrenme sürecimi çok zorlaştırıyor.\
+          Bu konuda ben sana bazi cumleler ve cumle içerisinde geçen kelimeleri verecegim sen de bana bu kelimenin deyim olup olmadigini soyleyeceksin.\
           Output formatin soyle olmalidir. {Cumle}: {Idiom veya Nonidiom}.\
-          Ornegin, 5 adım attıktan sonra sağa dön ve 20 adım daha at: Nonidiom\
-          Bir ornek daha, Petrol yasasında geri adım mı atılacak.: Idiom\
+          Ornegin, Adım Atmak: 5 adım attıktan sonra sağa dön ve 20 adım daha at: Nonidiom\
+          Bir ornek daha, Adım Atmak: Petrol yasasında geri adım mı atılacak.: Idiom\
           Asagidaki cumleleri ornekteki gibi siniflandir.\
           "
 
 df = pd.read_excel("./dataset_tr.xlsx").iloc[0:10, :]
-df['prompt'] = df['submission']
+df['prompt'] = df['idiom'] + ": " + df['submission']
 
 for i, data in enumerate(df['prompt'].values):
     content += f'\n {i+1}. {data}'
 
+print(content)
 response = openai.Completion.create(model="text-davinci-003",
                                     prompt=content,
                                     temperature=0,
