@@ -1,0 +1,19 @@
+1. başa geçmek deyimi için örnek: 'Yeni müdür, eski müdürün yerine başa geçti.' Deyim olmayan örnek: 'Başa geçmek için çok çalıştı.'
+
+2. defterden silmek deyimi için örnek: 'Hata yaptığımızı fark edince, defterden silmek zorunda kaldık.' Deyim olmayan örnek: 'Defterden silmek yerine üzerini çizdik.'
+
+3. el açmak deyimi için örnek: 'Yardım için el açtı.' Deyim olmayan örnek: 'El açmak yerine kendi başına çözmeye çalıştı.'
+
+4. el koymak deyimi için örnek: 'Polis, suç delili olarak bilgisayara el koydu.' Deyim olmayan örnek: 'El koymak yerine sadece incelediler.'
+
+5. ele almak deyimi için örnek: 'Problemi ele aldık ve çözüm bulduk.' Deyim olmayan örnek: 'Ele almak yerine görmezden geldiler.'
+
+6. göz yummak deyimi için örnek: 'Hata yaptığını biliyordu ama göz yumdu.' Deyim olmayan örnek: 'Göz yummak yerine doğruyu söyledi.'
+
+7. hesap vermek deyimi için örnek: 'Yaptığı hatanın hesabını vermek zorunda kaldı.' Deyim olmayan örnek: 'Hesap vermek yerine kaçtı.'
+
+8. ileri sürmek deyimi için örnek: 'Yeni bir fikir ileri sürdü.' Deyim olmayan örnek: 'İleri sürmek yerine geri çekildi.'
+
+9. iz bırakmak deyimi için örnek: 'Geçmişte yaptığı hatalar iz bıraktı.' Deyim olmayan örnek: 'İz bırakmak yerine unutuldu.'
+
+10. içi erimek deyimi için örnek: 'Onun sözleri karşısında içim eridi.' Deyim olmayan örnek: 'İçi erimek yerine sadece üzüldü.'
