@@ -83,7 +83,7 @@ class Classifier(OpenAI):
             max_tokens=3250,
             temperature=0,
         )
-        return response.get("choices")[0].get("message").get("content")
+        return response.get("choices")[0].get("message").get("content")  # type: ignore
 
         # response = openai.Completion.create(model="text-davinci-003",
         #                                     prompt=self.prompt,

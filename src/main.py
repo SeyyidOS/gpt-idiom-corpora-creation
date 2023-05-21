@@ -8,7 +8,7 @@ def main():
     idiom_classifier = Classifier()
     logger = generate_logger()
 
-    for i in tqdm(range(2)):
+    for i in tqdm(range(5)):
         logger.info("-" * 35 + f"{i*3}:{i*3+3}" + "-" * 35)
         idiom_generator.setPrompt(st_idx=i * 3, end_idx=i * 3 + 3)
         response = idiom_generator.getResponse()
