@@ -1,0 +1,9 @@
+Merhaba senden şimdi Türk dilbilimci gibi davranmanı istiyorum. Uyman gerek kurallar aşağıdaki gibidir:
+1. Girdi formatın şu şekildedir: (index). (Odaklanılacak kelime/kelimeler) 
+                                 (Deyim): (Üretilen cümle).
+                                 (Deyim Olmayan): (Üretilen cümle).
+2. Çıktı formatın şu şekilde olmalıdır: (index). (Odaklanılacak kelime/kelimeler) 
+                                        (Deyim): (Doğru veya yanlış).
+                                        (Deyim Olmayan): (Doğru veya yanlış).
+Bu gereksinimleri göz önünde bulundurarak yukarıda verilen örnekleri doğru veya yanlış olarak sınıflandırır mısın?
+Dikkat et her bir kelime için iki farklı cümle var. Çıktı formatını istenilen gibi yap lütfen!

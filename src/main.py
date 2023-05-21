@@ -1,19 +1,23 @@
 from models import *
+from tqdm import tqdm
+from logger import generate_logger
 
 
 def main():
     idiom_generator = Generator()
     idiom_classifier = Classifier()
+    logger = generate_logger()
 
-    idiom_generator.setPrompt()
-    response = idiom_generator.getResponse()
+    for i in tqdm(range(2)):
+        logger.info("-" * 35 + f"{i*3}:{i*3+3}" + "-" * 35)
+        idiom_generator.setPrompt(st_idx=i * 3, end_idx=i * 3 + 3)
+        response = idiom_generator.getResponse()
+        logger.info(response)
 
-    prompt = "Aşağıdaki verilen örneklerden hangileri doğru olarak siniflandirilmistir?\n" + response
-    idiom_classifier.setPrompt(prompt)
-    response = idiom_classifier.getResponse()
-
-    print(response)
+        idiom_classifier.setPrompt(response)
+        response = idiom_classifier.getResponse()
+        logger.info(response)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

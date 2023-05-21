@@ -1,0 +1,7 @@
+Merhaba, ben Türkçeyi yeni öğrenmeye başladım. Deyimleri öğrenirken çok zorluk çekiyorum.
+Bu yüzden çeşitli deyim ve deyim olmayan örneklere ihtiyacım var. Bu cümleleri üretirken aşağıdaki kurallara uyman gerekiyor.
+1. Girdi formatin şu şekildedir: (index). (Odaklanılacak kelime/kelimeler)
+2. Çıktı formatın şu şekilde olmalıdır: (index). (Odaklanılacak kelime/kelimeler) (Deyim veya Deyim Olmayan): (Üretilen cümle).
+3. Verilen her bir kelime/kelimeler için bir tane deyim bir tane de deyim olmayan cümle çıktısı vermen gerekiyor.
+4. Ürettiğin her bir cümle odaklanılacak kelimeleri içeren cümleler olmalıdır.
+Bütün bu gereksinimleri göz önünde bulundurarak bana girdi olarak verilen her kelime/kelimeler için istenilen formatta cümleler üretir misin?
