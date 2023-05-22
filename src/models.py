@@ -9,12 +9,33 @@ class OpenAI(ABC):
 
         self.prompt = ""
 
-    @abstractmethod
-    def setPrompt(prompt=None):
-        ...
+    def getResponse(self, model="gpt-3.5-turbo"):
+        setConfig()
+        if model == "gpt-3.5-turbo":
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "Sen bir Türkçe dilbilimcisin."},
+                    {"role": "user", "content": self.prompt},
+                ],
+                max_tokens=3250,
+                temperature=0,
+            )
+            return response.get("choices")[0].get("message").get("content")  # type: ignore
+        elif model == "text-davinci-003":
+            response = openai.Completion.create(
+                model="text-davinci-003",
+                prompt=self.prompt,
+                temperature=0,
+                max_tokens=3000,
+                top_p=1,
+                frequency_penalty=0.5,
+                presence_penalty=0.5,
+            )
+            return response.get("choices")[0].get("text")  # type: ignore
 
     @abstractmethod
-    def getResponse():
+    def setPrompt():
         ...
 
 
@@ -38,58 +59,14 @@ class Generator(OpenAI):
         if vis_prompt:
             print(self.prompt + "\n")
 
-    def getResponse(self):
-        setConfig()
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "Sen bir Türkçe dilbilimcisin."},
-                {"role": "user", "content": self.prompt},
-            ],
-            max_tokens=3250,
-            temperature=0,
-        )
-        return response.get("choices")[0].get("message").get("content")  # type: ignore
-
-        # response = openai.Completion.create(model="text-davinci-003",
-        #                                     prompt=self.prompt,
-        #                                     temperature=0,
-        #                                     max_tokens=3000,
-        #                                     top_p=1,
-        #                                     frequency_penalty=0,
-        #                                     presence_penalty=0)
-        # return response.get('choices')[0].get('text')
-
 
 class Classifier(OpenAI):
     def __init__(self):
         super().__init__()
 
-    def setPrompt(self, prompt="", vis_prompt=False):
+    def setPrompt(self, prompt, vis_prompt=False):
         with open("src/requirements_prompts/classifier_requirements.txt") as f:
             requirements = f.read()
         self.prompt = prompt + "\n" + requirements
         if vis_prompt:
             print(self.prompt + "\n")
-
-    def getResponse(self):
-        setConfig()
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "Sen bir Türkçe dilbilimcisin."},
-                {"role": "user", "content": self.prompt},
-            ],
-            max_tokens=3250,
-            temperature=0,
-        )
-        return response.get("choices")[0].get("message").get("content")  # type: ignore
-
-        # response = openai.Completion.create(model="text-davinci-003",
-        #                                     prompt=self.prompt,
-        #                                     temperature=0,
-        #                                     max_tokens=3000,
-        #                                     top_p=1,
-        #                                     frequency_penalty=0.5,
-        #                                     presence_penalty=0.5)
-        # return response.get('choices')[0].get('text')
